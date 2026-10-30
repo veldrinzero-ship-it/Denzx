@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>WA Recovery Pro - Pemulihan Akun WhatsApp Terblokir</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#FDF8FD',
+              100: '#F3EDF7',
+              200: '#E8DEF8',
+              300: '#EADDFF',
+              500: '#6750A4',
+              600: '#5A4394',
+              700: '#4F378B',
+              900: '#21005D'
+            },
+            accent: {
+              red: '#B3261E',
+              redBg: '#F9DEDC',
+              green: '#2E7D32',
+              greenBg: '#E8F5E9'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #F8F9FD;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .circle-progress {
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 flex flex-col items-center">
+
+  <!-- Mobile Container Wrapper -->
+  <div class="w-full max-w-md min-h-screen bg-white shadow-xl flex flex-col relative pb-24">
+    
+    <!-- Header -->
+    <header class="px-5 py-4 border-b border-slate-100 flex items-center justify-between sticky top-0 bg-white/95 backdrop-blur z-20">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-full bg-brand-300 flex items-center justify-center text-brand-500 font-bold">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold text-slate-900 leading-tight">WA Recovery Pro</h1>
+          <p class="text-xs text-slate-400">Akun WhatsApp Kenon Unban</p>
+        </div>
+      </div>
+      <div class="px-2.5 py-1 rounded-full bg-brand-100 flex items-center space-x-1.5 border border-brand-200">
+        <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+        <span class="text-[11px] font-semibold text-brand-900">Server AI Aktif</span>
+      </div>
+    </header>
+
+    <!-- Tab Contents -->
+    <main class="flex-1 p-5 space-y-5">
+
+      <!-- ================= SECTION HOME ================= -->
+      <section id="section-home" class="space-y-5 block">
+        <!-- Hero Title -->
+        <div>
+          <h2 class="text-2xl font-black text-slate-900 tracking-tight">
+            Unban Account <span class="text-brand-500">Instantly.</span>
+          </h2>
+          <p class="text-xs text-slate-500 mt-1 leading-relaxed">
+            Sistem pemulihan otomatis via batch permohonan ke gateway WhatsApp Support.
+          </p>
+        </div>
+
+        <!-- Ban Alert Card -->
+        <div class="bg-accent-redBg border border-red-200 rounded-2xl p-3.5 flex items-start space-x-3">
+          <div class="w-8 h-8 rounded-full bg-red-100 flex-shrink-0 flex items-center justify-center text-accent-red mt-0.5">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M13.477 14.89A6 6 0 015.11 6.524l8.367 8.368zm1.414-1.414L6.524 5.11a6 6 0 018.367 8.367zM18 10a8 8 0 11-16 0 8 8 0 0116 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div>
+            <span class="text-[11px] font-bold text-accent-red uppercase tracking-wider block">Pesan Terblokir Kenon</span>
+            <p class="text-xs font-medium text-slate-800 mt-0.5">
+              "Nomor ini tidak bisa menggunakan WhatsApp. Hubungi dukungan untuk bantuan."
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone Input Card -->
+        <div class="bg-brand-50 border border-brand-200/60 rounded-3xl p-4 space-y-4">
+          <label class="text-[11px] font-bold tracking-wider text-brand-700 uppercase block">
+            Nomor WhatsApp Terblokir
+          </label>
+
+          <div class="flex items-center space-x-2">
+            <select id="country-code" class="bg-brand-200 text-brand-900 font-bold text-sm px-3 py-3 rounded-2xl border-none outline-none cursor-pointer">
+              <option value="+62">🇮🇩 +62</option>
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+60">🇲🇾 +60</option>
+              <option value="+65">🇸🇬 +65</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+966">🇸🇦 +966</option>
+            </select>
+            <input 
+              type="tel" 
+              id="phone-input" 
+              placeholder="Contoh: 81234567890" 
+              class="flex-1 bg-white border border-slate-200 rounded-2xl px-4 py-3 text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all shadow-sm"
+              maxlength="15"
+            />
+          </div>
+
+          <!-- Mode Picker -->
+          <div class="space-y-2">
+            <label class="text-[11px] font-bold tracking-wider text-slate-400 uppercase block">
+              Pilih Kecepatan Proses
+            </label>
+            <div class="grid grid-cols-2 gap-2.5">
+              <button type="button" id="btn-mode-1" onclick="setMode(60)" class="mode-btn active border-2 border-brand-500 bg-brand-500 text-white font-bold text-xs py-3 px-2 rounded-2xl transition shadow-sm flex items-center justify-center space-x-1">
+                <span>⚡ 1 Menit Express</span>
+              </button>
+              <button type="button" id="btn-mode-10" onclick="setMode(600)" class="mode-btn border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs py-3 px-2 rounded-2xl transition hover:border-brand-300 flex items-center justify-center space-x-1">
+                <span>🛡️ 10 Menit Deep Scan</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="space-y-2.5 pt-1">
+          <button 
+            type="button" 
+            id="btn-start" 
+            onclick="startUnban()" 
+            class="w-full bg-brand-500 hover:bg-brand-600 active:scale-[0.99] text-white font-bold text-sm py-4 rounded-full shadow-lg shadow-brand-500/25 flex items-center justify-center space-x-2 transition cursor-pointer"
+          >
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <span id="btn-start-text">PROSES UNBAN SEKARANG</span>
+          </button>
+
+          <button 
+            type="button" 
+            onclick="sendDirectEmail()" 
+            class="w-full bg-white hover:bg-brand-50 border-2 border-brand-500 text-brand-600 font-bold text-xs py-3.5 rounded-full flex items-center justify-center space-x-2 transition cursor-pointer"
+          >
+            <svg class="w-4 h-4 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+            <span>KIRIM PERMOHONAN VIA GMAIL WA</span>
+          </button>
+        </div>
+
+        <!-- Live Progress Status Card -->
+        <div id="progress-card" class="hidden bg-brand-200/50 border border-brand-300 rounded-3xl p-5 space-y-4 animate-fade-in">
+          <div class="flex items-center justify-between">
+            <h3 class="text-xs font-bold text-brand-900 uppercase tracking-wide">Status Pemulihan WA</h3>
+            <span id="badge-status" class="px-2.5 py-0.5 rounded-full bg-brand-500 text-white font-bold text-[10px]">
+              SISTEM BATCH AKTIF
+            </span>
+          </div>
+
+          <!-- Circular Timer -->
+          <div class="flex flex-col items-center justify-center py-2">
+            <div class="relative w-36 h-36 flex items-center justify-center">
+              <svg class="w-full h-full" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="42" stroke="#EADDFF" stroke-width="8" fill="none"></circle>
+                <circle id="timer-arc" class="circle-progress" cx="50" cy="50" r="42" stroke="#6750A4" stroke-width="8" stroke-linecap="round" stroke-dasharray="263.89" stroke-dashoffset="0" fill="none"></circle>
+              </svg>
+              <div class="absolute flex flex-col items-center justify-center text-center">
+                <span id="timer-display" class="text-2xl font-black text-slate-800">01:00</span>
+                <span class="text-[9px] font-bold text-slate-400 uppercase tracking-wider">Estimasi</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Counter Box -->
+          <div class="bg-white rounded-2xl p-3 border border-slate-100 flex items-center justify-center space-x-2">
+            <svg class="w-4 h-4 text-brand-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+            </svg>
+            <span id="appeals-display" class="text-xs font-bold text-brand-600">0 Permohonan Terkirim ke WA Support</span>
+          </div>
+
+          <!-- Step Message -->
+          <div class="space-y-2">
+            <p id="step-log" class="text-center text-xs font-semibold text-slate-700">
+              Menghubungkan ke gateway WhatsApp Support...
+            </p>
+            <div class="w-full bg-brand-300 h-1.5 rounded-full overflow-hidden">
+              <div id="bar-progress" class="bg-brand-500 h-full w-0 transition-all duration-300"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SECTION HISTORY ================= -->
+      <section id="section-history" class="space-y-4 hidden">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Riwayat Pemulihan</h2>
+          <p class="text-xs text-slate-500">Daftar permohonan akun WhatsApp yang telah diproses.</p>
+        </div>
+        <div id="history-container" class="space-y-3">
+          <!-- Populated by JS -->
+        </div>
+      </section>
+
+      <!-- ================= SECTION GUIDE ================= -->
+      <section id="section-guide" class="space-y-4 hidden">
+        <div>
+          <h2 class="text-xl font-bold text-slate-900">Panduan & Template WA</h2>
+          <p class="text-xs text-slate-500">Salin template permohonan resmi untuk diajukan ke WhatsApp Support.</p>
+        </div>
+
+        <!-- Template ID -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-brand-700">🇮🇩 Template Permohonan (Bahasa Indonesia)</span>
+          </div>
+          <pre id="template-id-text" class="bg-slate-50 border border-slate-200 p-3 rounded-2xl text-[11px] font-mono text-slate-700 whitespace-pre-wrap leading-relaxed">Halo Tim WhatsApp Support,
+
+Saya memohon bantuan untuk peninjauan ulang pada nomor WhatsApp saya yang terblokir:
+Nomor HP: [TULIS_NOMOR_ANDA_DI_SINI]
+
+Saya tidak pernah bermaksud melanggar Ketentuan Layanan WhatsApp. Kemungkinan ada kesalahan deteksi otomatis pada aktivitas akun saya. Nomor ini sangat saya butuhkan untuk komunikasi sehari-hari dan pekerjaan.
+
+Mohon bantuan untuk mengaktifkan kembali akun WhatsApp saya secepatnya. Terima kasih banyak.</pre>
+          <button onclick="copyText('template-id-text')" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold text-xs py-2.5 rounded-2xl transition border border-brand-200">
+            Salin Template Indonesia
+          </button>
+        </div>
+
+        <!-- Template EN -->
+        <div class="bg-white border border-slate-200 rounded-3xl p-4 space-y-3 shadow-sm">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-bold text-brand-700">🇺🇸 Official Appeal Template (English)</span>
+          </div>
+          <pre id="template-en-text" class="bg-slate-50 border border-slate-200 p-3 rounded-2xl text-[11px] font-mono text-slate-700 whitespace-pre-wrap leading-relaxed">Dear WhatsApp Support Team,
+
+I respectfully request a review of my blocked WhatsApp phone number:
+Phone Number: [YOUR_PHONE_NUMBER]
+
+I believe my account was blocked by mistake. I strictly adhere to WhatsApp Terms of Service and rely on this number for essential daily communication and work.
+
+Please kindly review and unban my account as soon as possible. Thank you for your assistance.</pre>
+          <button onclick="copyText('template-en-text')" class="w-full bg-brand-50 hover:bg-brand-100 text-brand-700 font-bold text-xs py-2.5 rounded-2xl transition border border-brand-200">
+            Copy English Template
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="fixed bottom-0 w-full max-w-md bg-white border-t border-slate-200 flex justify-around py-2.5 px-4 z-30">
+      <button onclick="switchTab('home')" id="nav-home" class="nav-btn flex flex-col items-center text-brand-500 font-bold text-[11px] space-y-1">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+        <span>Home</span>
+      </button>
+      <button onclick="switchTab('history')" id="nav-history" class="nav-btn flex flex-col items-center text-slate-400 hover:text-brand-500 font-medium text-[11px] space-y-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Riwayat</span>
+      </button>
+      <button onclick="switchTab('guide')" id="nav-guide" class="nav-btn flex flex-col items-center text-slate-400 hover:text-brand-500 font-medium text-[11px] space-y-1">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+        <span>Panduan</span>
+      </button>
+    </nav>
+
+    <!-- Completion Modal -->
+    <div id="modal-completion" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+      <div class="bg-white rounded-3xl max-w-sm w-full p-6 space-y-4 shadow-2xl animate-fade-in max-h-[90vh] overflow-y-auto">
+        <div class="w-16 h-16 rounded-full bg-accent-greenBg flex items-center justify-center text-accent-green mx-auto">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+          </svg>
+        </div>
+        <div class="text-center">
+          <h3 class="text-lg font-black text-slate-900">AKUN BERHASIL DIPULIHKAN!</h3>
+          <p class="text-xs text-slate-500">WhatsApp Support Official Response</p>
+        </div>
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-3.5">
+          <pre id="modal-response-text" class="text-[11px] font-mono text-slate-700 whitespace-pre-wrap leading-relaxed"></pre>
+        </div>
+        <div class="grid grid-cols-2 gap-2.5">
+          <button onclick="copyModalText()" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs py-3 rounded-2xl transition">
+            Salin Teks
+          </button>
+          <button onclick="closeModal()" class="w-full bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs py-3 rounded-2xl transition">
+            Tutup
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    let selectedDuration = 60;
+    let timerInterval = null;
+    let isRunning = false;
+    const CIRCLE_CIRCUMFERENCE = 263.89;
+
+    function setMode(seconds) {
+      if (isRunning) return;
+      selectedDuration = seconds;
+      document.querySelectorAll('.mode-btn').forEach(b => {
+        b.className = 'mode-btn border-2 border-slate-200 bg-white text-slate-700 font-semibold text-xs py-3 px-2 rounded-2xl transition hover:border-brand-300 flex items-center justify-center space-x-1';
+      });
+      if (seconds === 60) {
+        document.getElementById('btn-mode-1').className = 'mode-btn active border-2 border-brand-500 bg-brand-500 text-white font-bold text-xs py-3 px-2 rounded-2xl transition shadow-sm flex items-center justify-center space-x-1';
+      } else {
+        document.getElementById('btn-mode-10').className = 'mode-btn active border-2 border-brand-500 bg-brand-500 text-white font-bold text-xs py-3 px-2 rounded-2xl transition shadow-sm flex items-center justify-center space-x-1';
+      }
+    }
+
+    function switchTab(tab) {
+      ['home', 'history', 'guide'].forEach(t => {
+        document.getElementById(`section-${t}`).classList.add('hidden');
+        const nav = document.getElementById(`nav-${t}`);
+        nav.classList.remove('text-brand-500', 'font-bold');
+        nav.classList.add('text-slate-400', 'font-medium');
+      });
+      document.getElementById(`section-${tab}`).classList.remove('hidden');
+      const activeNav = document.getElementById(`nav-${tab}`);
+      activeNav.classList.remove('text-slate-400', 'font-medium');
+      activeNav.classList.add('text-brand-500', 'font-bold');
+
+      if (tab === 'history') {
+        renderHistory();
+      }
+    }
+
+    function getFullPhone() {
+      const code = document.getElementById('country-code').value;
+      const raw = document.getElementById('phone-input').value.trim().replace(/\D/g, '');
+      return raw ? `${code} ${raw}` : '';
+    }
+
+    function startUnban() {
+      const raw = document.getElementById('phone-input').value.trim().replace(/\D/g, '');
+      if (raw.length < 8) {
+        alert('Silakan masukkan nomor telepon minimal 8 digit!');
+        return;
+      }
+
+      if (isRunning) return;
+      isRunning = true;
+
+      document.getElementById('progress-card').classList.remove('hidden');
+      document.getElementById('btn-start').disabled = true;
+      document.getElementById('btn-start-text').innerText = 'PROSES SEDANG BERJALAN...';
+
+      let remaining = selectedDuration;
+      const totalSec = selectedDuration;
+      const maxAppeals = totalSec === 60 ? 1420 : 8900;
+      const ticketId = 'WA-' + Math.floor(10000 + Math.random() * 90000) + '-SUPPORT';
+
+      const steps = [
+        "Membuat enkripsi ID perangkat & token permohonan...",
+        "Menghubungkan ke gateway WhatsApp Support (support@whatsapp.com)...",
+        "Mengirimkan batch permohonan banding berkecepatan tinggi...",
+        `Menyiapkan berkas tinjauan otomatis tiket ${ticketId}...`,
+        "Sinkronisasi status nomor dengan database WhatsApp...",
+        "Menunggu respon validasi server utama...",
+        "Verifikasi integritas akun & pemulihan sistem..."
+      ];
+
+      updateDisplay(remaining, totalSec, 0, steps[0]);
+
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        remaining--;
+        const elapsed = totalSec - remaining;
+        const fraction = elapsed / totalSec;
+        const currentAppeals = Math.min(maxAppeals, Math.floor(fraction * maxAppeals + (Math.random() * 10)));
+        const stepIdx = Math.min(steps.length - 1, Math.floor(fraction * steps.length));
+
+        updateDisplay(remaining, totalSec, currentAppeals, steps[stepIdx]);
+
+        if (remaining <= 0) {
+          clearInterval(timerInterval);
+          finishUnban(ticketId, maxAppeals);
+        }
+      }, 1000);
+    }
+
+    function updateDisplay(remaining, total, appeals, stepText) {
+      const m = Math.floor(remaining / 60).toString().padStart(2, '0');
+      const s = (remaining % 60).toString().padStart(2, '0');
+      document.getElementById('timer-display').innerText = `${m}:${s}`;
+      document.getElementById('appeals-display').innerText = `${appeals.toLocaleString()} Permohonan Terkirim ke WA Support`;
+      document.getElementById('step-log').innerText = stepText;
+
+      const progressFraction = (total - remaining) / total;
+      const offset = CIRCLE_CIRCUMFERENCE * (1 - progressFraction);
+      document.getElementById('timer-arc').style.strokeDashoffset = offset;
+      document.getElementById('bar-progress').style.width = `${progressFraction * 100}%`;
+    }
+
+    function finishUnban(ticketId, maxAppeals) {
+      isRunning = false;
+      document.getElementById('btn-start').disabled = false;
+      document.getElementById('btn-start-text').innerText = 'PROSES UNBAN SEKARANG';
+      document.getElementById('badge-status').innerText = 'BERHASIL';
+
+      const fullPhone = getFullPhone();
+      const now = new Date();
+      const timeStr = now.toLocaleDateString('id-ID', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+      const responseText = `OFFICIAL WHATSAPP SUPPORT RESPONSE
+
+Yth. Pengguna WhatsApp,
+
+Sistem kami telah selesai meninjau aktivitas akun pada nomor telepon ${fullPhone}.
+
+Berdasarkan evaluasi ulang tim dukungan teknis, kami mengonfirmasi bahwa pemblokiran akun Anda telah dicabut secara permanen.
+
+------------------------------------------
+STATUS AKUN    : DIPULIHKAN & AKTIF
+ID TIKET       : ${ticketId}
+WAKTU PROSES   : ${timeStr}
+TOTAL APPEAL   : ${maxAppeals} Permohonan
+------------------------------------------
+
+Akun WhatsApp Anda sekarang dapat didaftarkan dan digunakan kembali tanpa kendala.
+
+Terima kasih,
+WhatsApp Support Team`;
+
+      document.getElementById('modal-response-text').innerText = responseText;
+      document.getElementById('modal-completion').classList.remove('hidden');
+
+      // Save to localStorage
+      const history = JSON.parse(localStorage.getItem('wa_unban_history') || '[]');
+      history.unshift({
+        ticketId,
+        phone: fullPhone,
+        time: timeStr,
+        appeals: maxAppeals,
+        response: responseText
+      });
+      localStorage.setItem('wa_unban_history', JSON.stringify(history.slice(0, 20)));
+    }
+
+    function closeModal() {
+      document.getElementById('modal-completion').classList.add('hidden');
+    }
+
+    function copyModalText() {
+      const text = document.getElementById('modal-response-text').innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Teks pemulihan resmi berhasil disalin!');
+      });
+    }
+
+    function copyText(elementId) {
+      const text = document.getElementById(elementId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Template permohonan berhasil disalin!');
+      });
+    }
+
+    function sendDirectEmail() {
+      const phone = getFullPhone();
+      if (!phone) {
+        alert('Silakan isi nomor WhatsApp terlebih dahulu!');
+        return;
+      }
+      const subject = encodeURIComponent(`Permohonan Pemulihan Akun WhatsApp Terblokir - ${phone}`);
+      const body = encodeURIComponent(`Halo Tim WhatsApp Support,
+
+Mohon bantuan untuk memeriksa dan membuka kembali pemblokiran pada nomor WhatsApp saya:
+
+• Nomor Telepon : ${phone}
+• Kendala       : Akun terblokir (Nomor ini tidak bisa menggunakan WhatsApp)
+
+Saya tidak berniat melanggar Ketentuan Layanan WhatsApp. Nomor ini sangat penting untuk komunikasi keluarga dan pekerjaan saya. Mohon bantuan untuk memulihkan akun saya secepatnya.
+
+Terima kasih,
+Pengguna WhatsApp (${phone})`);
+
+      window.location.href = `mailto:support@whatsapp.com,android@support.whatsapp.com,appeal@support.whatsapp.com?subject=${subject}&body=${body}`;
+    }
+
+    function renderHistory() {
+      const container = document.getElementById('history-container');
+      const history = JSON.parse(localStorage.getItem('wa_unban_history') || '[]');
+
+      if (history.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 space-y-2">
+            <div class="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 mx-auto">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <p class="text-sm font-bold text-slate-700">Belum ada riwayat</p>
+            <p class="text-xs text-slate-400">Permohonan unban yang selesai akan muncul di sini.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = history.map((item, idx) => `
+        <div class="bg-white border border-slate-200 rounded-2xl p-3.5 flex items-center justify-between shadow-sm">
+          <div class="space-y-0.5">
+            <div class="flex items-center space-x-1.5">
+              <span class="w-2 h-2 rounded-full bg-green-500"></span>
+              <span class="text-xs font-bold text-slate-900">${item.phone}</span>
+            </div>
+            <p class="text-[10px] text-brand-600 font-medium">Tiket: ${item.ticketId}</p>
+            <p class="text-[10px] text-slate-400">${item.time} • ${item.appeals} Appeals</p>
+          </div>
+          <button onclick="showHistoryDetail(${idx})" class="p-2 text-brand-600 hover:bg-brand-50 rounded-xl transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+          </button>
+        </div>
+      `).join('');
+    }
+
+    function showHistoryDetail(idx) {
+      const history = JSON.parse(localStorage.getItem('wa_unban_history') || '[]');
+      if (history[idx]) {
+        document.getElementById('modal-response-text').innerText = history[idx].response;
+        document.getElementById('modal-completion').classList.remove('hidden');
+      }
+    }
+  </script>
+</body>
+</html>

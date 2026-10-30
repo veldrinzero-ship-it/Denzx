@@ -1,0 +1,6 @@
+{
+  "name": "WA Recovery Pro",
+  "description": "Aplikasi Pemulihan & Unban Akun WhatsApp Terblokir (Kenon) Cepat & Otomatis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
